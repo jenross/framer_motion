@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardGrid, Container, Header } from "./Elements";
 import "./App.css";
 import Menu from "./Menu";
@@ -22,9 +22,17 @@ function App() {
         <h1>Header</h1>
       </Header>
       <Container>
-        <motion.h2 animate={{ opacity: isToggled, x: value + "px" }}>
-          Super Cool
-        </motion.h2>
+        <AnimatePresence>
+          {isToggled && (
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isToggled, x: value + "px" }}
+              exit={{ opacity: 0 }}
+            >
+              Super Cool
+            </motion.h2>
+          )}
+        </AnimatePresence>
         <button
           onClick={() =>
             setToggle((prevValue) => {
