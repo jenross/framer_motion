@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardGrid, Container, Header } from "./Elements";
 import Modal from "./Modal";
+import Accordion from "./Accordion";
 import "./App.css";
 import Menu from "./Menu";
 import blue from "./blue.png";
@@ -38,6 +39,7 @@ function App() {
             <img src={purp} />
           </Card>
         </Modal>
+        <Accordion />
         <CardGrid>
           <Card style={{ background: "var(--purp)" }}>
             <h3>Some card</h3>
