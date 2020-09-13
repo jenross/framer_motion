@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
+const variants = {
+  open: { opacity: 1, height: "auto" },
+  closed: { opacity: 0, height: 0 },
+};
+
 const Accordion = ({ title, body }) => {
   const [isToggled, setIsToggled] = useState(false);
   return (
@@ -12,10 +17,11 @@ const Accordion = ({ title, body }) => {
         {isToggled && (
           <>
             <motion.div
+              variants={variants}
               style={{ overflow: "hidden" }}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial="closed"
+              animate="open"
+              exit="closed"
             >
               <p>
                 I'm baby tumeric hexagon shoreditch migas. Snackwave four loko

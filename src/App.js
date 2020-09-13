@@ -15,8 +15,9 @@ function App() {
   const [isToggled, setToggle] = useState(false);
   return (
     <motion.div
-      animate={{ opacity: [0, 1, 0, 1] }}
-      transition={{ duration: 5, times: [0, 0.2, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <Header>
         <Menu />
