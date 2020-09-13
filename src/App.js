@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardGrid, Container, Header } from "./Elements";
 import Modal from "./Modal";
+import Nav from "./Nav";
 import Accordion from "./Accordion";
 import "./App.css";
 import Menu from "./Menu";
@@ -13,6 +14,7 @@ import green from "./green.png";
 function App() {
   const [value, setValue] = useState(0);
   const [isToggled, setToggle] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +22,8 @@ function App() {
       transition={{ duration: 1 }}
     >
       <Header>
-        <Menu />
+        <Menu onClick={() => setIsNavOpen(true)} />
+        <Nav isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
         <h1>Header</h1>
       </Header>
       <Container>
