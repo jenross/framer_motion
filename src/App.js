@@ -9,6 +9,7 @@ import { Card, CardGrid, Container, Header } from "./Elements";
 import Modal from "./Modal";
 import Nav from "./Nav";
 import Accordion from "./Accordion";
+import Squares from "./Squares";
 import "./App.css";
 import Menu from "./Menu";
 import blue from "./blue.png";
@@ -35,6 +36,7 @@ function App() {
         <h1>Header</h1>
       </Header>
       <Container>
+        <Squares />
         <h2>Super Cool</h2>
         <button onClick={() => setToggle(true)}>Toggle</button>
         <input
