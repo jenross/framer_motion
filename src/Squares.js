@@ -10,6 +10,8 @@ const COLORS = [
   "var(--green)",
 ];
 
+
+
 export const Squares = () => {
   const [colorsList, setColorsList] = useState(COLORS);
   return (

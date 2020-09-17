@@ -10,6 +10,7 @@ import Modal from "./Modal";
 import Nav from "./Nav";
 import Accordion from "./Accordion";
 import Squares from "./Squares";
+import Slideshow from "./Slideshow";
 import "./App.css";
 import Menu from "./Menu";
 import blue from "./blue.png";
@@ -36,6 +37,7 @@ function App() {
         <h1>Header</h1>
       </Header>
       <Container>
+        <Slideshow />
         <Squares />
         <h2>Super Cool</h2>
         <button onClick={() => setToggle(true)}>Toggle</button>
